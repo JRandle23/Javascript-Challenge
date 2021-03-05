@@ -16,3 +16,35 @@ tableData.forEach(function(ufoData) {
 
 });
 
+tableData.forEach(function(ufoData) {
+    console.log(ufoData);
+    var row = tbody.append("tr");
+
+    Object.entries(ufoData).forEach(function([key, value]) {
+        console.log(key, value)
+    });
+});
+
+tableData.forEach(function(ufoData) {
+    console.log(ufoData);
+    var row = tbody.append("tr");
+
+    Object.entries(ufoData).forEach(function([key, value]) {
+        console.log(key, value);
+
+        var cell = row.append("td");
+    });
+});
+
+
+tableData.forEach(function(ufoData) {
+    console.log(ufoData);
+    var row = tbody.append("tr");
+
+    Object.entries(ufoData).forEach(function([key, value]) {
+        console.log(key, value);
+
+        var cell = row.append("td");
+        cell.text(value);
+    });
+});
