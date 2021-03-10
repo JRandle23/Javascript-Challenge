@@ -20,9 +20,6 @@ tableData.forEach((ufoData) => {
 });
 
 
-// Assign data to variable
-//  var tableData = data;
-
 // Select button 
 var button = d3.select("#filter-btn");
 
@@ -31,16 +28,6 @@ var form = d3.select("#form");
 // Create event handlers 
 button.on("click", runEnter);
 form.on("submit", runEnter);
-
-// function filteredTable(data) {
-//     tbody.html("");
-//     data.forEach((item) => {
-//         var newRow = tbody.append('tr');
-//         Object.values(item).forEach((val) => {
-//             newRow.append("td").text(val)
-//         });
-//     });
-// };
 
 function runEnter() {
 
@@ -54,8 +41,6 @@ function runEnter() {
     var inputValue = inputElement.property("value");
 
     // console.log(inputValue);
-
-    // tbody.html("");
 
         var filteredData = tableData.filter(ufoData => ufoData.datetime === inputValue);
 
@@ -74,17 +59,6 @@ function runEnter() {
             });
         });
     };
-    // // console.log(filteredData);
-    // filteredData.forEach((ufoData) => {
-    //     var row = tbody.append("tr");
-    //     Object.entries(ufoData).forEach(([key,value]) => {
-    //         var cell = row.append("td");
-    //         cell.text(value);
-    //     });
-    // });
-    // console.log(filteredData);
-    // filteredTable(filteredData);
-
 };
 
 
