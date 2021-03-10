@@ -6,12 +6,12 @@ console.log(tableData);
 var tbody = d3.select("tbody");
 
 // UFO sighting values for each column
-tableData.forEach(function(ufoData) {
+tableData.forEach((ufoData) => {
     console.log(ufoData);
     // Append table row for each line of data 
     var rows = tbody.append("tr");
 
-    Object.entries(ufoData).forEach(function([key, value]) {
+    Object.entries(ufoData).forEach(([key, value]) => {
         console.log(key, value);
         // Append a cell to the row for each value
         var cell = rows.append("td");
@@ -25,11 +25,24 @@ tableData.forEach(function(ufoData) {
 
 // Select button 
 var button = d3.select("#filter-btn");
+var form = d3.select("#form");
 
 // Create event handlers 
-button.on("click", function() {
+// button.on("click", runEnter);
+button.on("click", runEnter);
+form.on("submit", runEnter);
 
+function filteredTable(data) {
     tbody.html("");
+    data.forEach((item) => {
+        var newRow = tbody.append('tr');
+        Object.values(item).forEach((val) => {
+            newRow.append("td").text(val)
+        });
+    });
+};
+
+function runEnter() {
 
     // Prevent page refreshing 
     d3.event.preventDefault();
@@ -42,10 +55,21 @@ button.on("click", function() {
 
     console.log(inputValue);
 
-    var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
-    console.log(filteredData);
+    // tbody.html("");
 
-});
+    var filteredData = tableData.filter((data) => data.datetime === inputValue);
+    // console.log(filteredData);
+    filteredData.forEach((ufoData) => {
+        var row = tbody.append("tr");
+        Object.entries(ufoData).forEach(([key,value]) => {
+            var cell = row.append("td");
+            cell.text(value);
+        });
+    });
+    console.log(filteredData);
+    filteredTable(filteredData);
+
+};
 
 
 
