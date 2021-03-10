@@ -26,28 +26,11 @@ tableData.forEach((ufoData) => {
 // Select button 
 var button = d3.select("#filter-btn");
 
-button.on("click", function(event) {
-    d3.event.preventDefault();
-    tbody.html("");
-
-var inputElement = d3.select("#datetime");
-var inputValue = inputElement.property("value");
-
-var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
-filteredData.forEach((dateData) => {
-    var row = tbody.append("tr");
-    Object.entries(dateData).forEach(([key,value]) => {
-        var cell=tbody.append("td");
-        cell.text(value);
-        });
-    });
-});
-// var form = d3.select("#form");
+var form = d3.select("#form");
 
 // Create event handlers 
-// button.on("click", runEnter);
-// button.on("click", runEnter);
-// form.on("submit", runEnter);
+button.on("click", runEnter);
+form.on("submit", runEnter);
 
 // function filteredTable(data) {
 //     tbody.html("");
@@ -59,34 +42,34 @@ filteredData.forEach((dateData) => {
 //     });
 // };
 
-// function runEnter() {
+function runEnter() {
 
-//     // Prevent page refreshing 
-//     d3.event.preventDefault();
+    // Prevent page refreshing 
+    d3.event.preventDefault();
 
-//     // Select the input datetime element and get the raw HTML node
-//     var inputElement = d3.select("#datetime");
+    // Select the input datetime element and get the raw HTML node
+    var inputElement = d3.select(".form-control");
 
-//     //  Get the value property of the input element 
-//     var inputValue = inputElement.property("value");
+    //  Get the value property of the input element 
+    var inputValue = inputElement.property("value");
 
-//     console.log(inputValue);
+    // console.log(inputValue);
 
-//     // tbody.html("");
+    // tbody.html("");
 
-//     var filteredData = tableData.filter((data) => data.datetime === inputValue);
-//     // console.log(filteredData);
-//     filteredData.forEach((ufoData) => {
-//         var row = tbody.append("tr");
-//         Object.entries(ufoData).forEach(([key,value]) => {
-//             var cell = row.append("td");
-//             cell.text(value);
-//         });
-//     });
-//     console.log(filteredData);
-//     filteredTable(filteredData);
+    var filteredData = tableData.filter((data) => data.datetime === inputValue);
+    // console.log(filteredData);
+    filteredData.forEach((ufoData) => {
+        var row = tbody.append("tr");
+        Object.entries(ufoData).forEach(([key,value]) => {
+            var cell = row.append("td");
+            cell.text(value);
+        });
+    });
+    console.log(filteredData);
+    filteredTable(filteredData);
 
-// };
+};
 
 
 
