@@ -20,3 +20,35 @@ tableData.forEach(function(ufoData) {
 });
 
 
+// Assign data to variable
+//  var tableData = data;
+
+// Select button 
+var button = d3.select("#filter-btn");
+
+// Create event handlers 
+button.on("click", function() {
+
+    tbody.html("");
+
+    // Prevent page refreshing 
+    d3.event.preventDefault();
+
+    // Select the input datetime element and get the raw HTML node
+    var inputElement = d3.select("#datetime");
+
+    //  Get the value property of the input element 
+    var inputValue = inputElement.property("value");
+
+    console.log(inputValue);
+
+    var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
+    console.log(filteredData);
+
+});
+
+
+
+
+
+
