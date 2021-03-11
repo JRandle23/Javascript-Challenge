@@ -57,6 +57,11 @@ body {
   margin-top: 50px;
 }
 
+.filters .panel-heading {
+  text-align: center;
+  color:chartreuse;
+}
+
 .filters .panel-body {
   padding: 0;
 }
@@ -108,6 +113,7 @@ select {
   margin-top: 200px;
   font-size: 0.1rem;
   animation: title 1.2s forwards linear;
+  color:chartreuse;
 }
 
 .hero p {
