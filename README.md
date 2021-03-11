@@ -1,5 +1,4 @@
-# JavaScript Homework - JavaScript and DOM Manipulation
-
+# JavaScript - Challenge
 
 ### Level 1: Automatic Table and Date Search (Required)
 
