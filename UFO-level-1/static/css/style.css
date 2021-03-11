@@ -60,6 +60,7 @@ body {
 
 .filters .panel-heading {
   text-align: center;
+  color:chartreuse;
 }
 
 .filters .panel-body {
@@ -113,6 +114,7 @@ select {
   margin-top: 200px;
   font-size: 0.1rem;
   animation: title 1.2s forwards linear;
+  color:chartreuse;
 }
 
 .hero p {
@@ -120,6 +122,7 @@ select {
   opacity: 0;
   animation: subtitle 1.2s forwards linear;
   animation-delay: 1.2s;
+  color:coral;
 }
 
 /* input placeholder color changes */
