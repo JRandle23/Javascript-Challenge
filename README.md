@@ -1,4 +1,4 @@
-# JavaScript - Challenge
+# JavaScript - UFO Sightings 
 
 ### Level 1: Automatic Table and Date Search (Required)
 
@@ -28,11 +28,6 @@
 
 * [UFO Sightings Data](StarterCode/static/js/data.js)
 
-- - -
-
-**Good luck!**
-
-- - -
 
 ### Copyright
 
